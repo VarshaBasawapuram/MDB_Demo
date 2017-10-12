@@ -41,7 +41,7 @@ app.get('/flightDetails', function (req, res) {
                 } else {
                     console.log("printing results....");
                     console.log(result);
-                    res.send(result.firstname + " " + result.lastname + " (" + result.phone + ") purchased on " + result.date + " will be delivered on" + result.dateTo);
+                    res.send(result.firstname + " " + result.lastname + " (" + result.phone + ") purchased on " + result.date + " will be delivered on" + result.dateTo+"with"+result.comment);
                 }
             });
         }
@@ -57,7 +57,8 @@ app.post('/index', function (req, res) {
         lastname: req.body.lastname,
         phone: req.body.phone,
         date: req.body.date,
-        dateTo: req.body.dateTo
+        dateTo: req.body.dateTo,
+        comment: req.body.comment
     };
     console.log(newUser);
     mongoClient.connect(url, function (err, db) {
