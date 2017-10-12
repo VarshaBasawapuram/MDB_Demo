@@ -41,7 +41,7 @@ app.get('/flightDetails', function (req, res) {
                 } else {
                     console.log("printing results....");
                     console.log(result);
-                    res.send(result.firstname + " " + result.lastname + " (" + result.phone + ") will depart on " + result.date + " and return on " + result.dateTo);
+                    res.send(result.firstname + " " + result.lastname + " (" + result.phone + ") purchased on " + result.date + " will be delivered on" + result.dateTo);
                 }
             });
         }
@@ -99,7 +99,7 @@ app.post('/index', function (req, res) {
 
 });
 
-app.set('port', 3010);
+app.set('port', 3009);
 app.listen(app.set('port'), function () {
     console.log('Server is running at port: ' + app.get('port'));
 });

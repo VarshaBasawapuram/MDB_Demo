@@ -13,6 +13,9 @@ varsha Basawapuram
   <body>
       <br>
 <style type="text/css">
+    body {
+        background-image: url("https://i.pinimg.com/originals/a8/06/6c/a8066cfc2ac2fe2a4f48e96d41a406c7.jpg")
+    }
   form.tab-form-demo .tab-pane {
     margin: 20px 20px;
   }
@@ -20,13 +23,13 @@ varsha Basawapuram
     <div class="container container-table">
     <div class="row vertical-center-row">
         <div class="col-md-4 col-md-offset-4">
-        <div class="panel panel-primary" style="width: 400px; height: 500px;" >
-        <div class="panel-heading">Welcome User!</div>
+        <div class="panel panel-danger" style="width: 400px; height: 500px;" >
+        <div class="panel-heading">Welcome to GK's Interiros!</div>
         <div class="panel-body client-left-side"></div>
 <div ng-controller="TabsDemoCtrl">
     <form  name="outerForm" class="tab-form-demo" action="/index" method="post">
     <uib-tabset active="activeForm">
-      <uib-tab index="0" heading="STEP 1">
+      <uib-tab index="0" heading="HOME">
           <ng-form name="nestedForm" ng-submit="formNext()">
           <div class="form-group">   
 <!-- Write code for input text fields (firstname,lastname,email,phone) here--> 
@@ -52,14 +55,14 @@ varsha Basawapuram
           </div>
         </ng-form>
       </uib-tab>
-      <uib-tab index="1" heading="STEP 2">
+      <uib-tab index="1" heading="Purchase">
 <ng-form name="nestedForm" ng-submit="formNext()">
           <div class="form-group">
         <div class="form-group input-group">
         <div class="row">
         <div class="col-md-12 ">
-            <label>From: &nbsp; </label><select  id="selectedOption" ng-model="selectedOption" ng-options="option.name for option in options">
-            </select>   <label>To: &nbsp;</label><select ng-model="selectedOptionTo" ng-options="option1.name for option1 in optionsTo">
+            <label>Interior Designs: &nbsp; </label><select  id="selectedOption" ng-model="selectedOption" ng-options="option.name for option in options">
+            </select>  <br /> <label>Other Interiors: &nbsp;</label><select ng-model="selectedOptionTo" ng-options="option1.name for option1 in optionsTo">
 </select>
 <!-- Write code for drowpdown list, go to below link for sample code or check slides.
 // http://www.w3schools.com/angular/tryit.asp?filename=try_ng_select_selected--> 
@@ -68,7 +71,7 @@ varsha Basawapuram
         </div>
        
         <div class="form-group input-group">
-        <label>Date Depart</label>
+        <label>Date of purchase</label>
         <div class="row">
         <div class="col-md-8">
        <p class="input-group">
@@ -79,7 +82,7 @@ varsha Basawapuram
         </p>
         </div>
         </div>
-          <label>Date Return</label>
+          <label>Date of delivery</label>
         <div class="row">
         <div class="col-md-8">
       <p class="input-group">
@@ -91,12 +94,12 @@ varsha Basawapuram
         </div>
         </div>
         </div>
-              <input type="checkbox" name="confirm" value="ticket"> I Confirm the purchase of ticket<br>
+              <input type="checkbox" name="confirm" value="ticket"> I agree to terms and conditions<br>
              <button type="button"   class="btn btn-primary" ng-click="formNext()" >Next</button>
           </div>
         </ng-form>
       </uib-tab>
-      <uib-tab index="2" heading="STEP 3" id="step3">
+      <uib-tab index="2" heading="Confirmation Details" id="step3">
            <ng-form  name="nestedForm" ng-submit="">
                <h3 id="display"></h3>
               <!-- Now display the firstname,lastname,email,phone, departure and arrival places on the selected dates--> 
@@ -124,47 +127,47 @@ angular.module('ui.bootstrap.demo').controller('TabsDemoCtrl', function ($scope,
   //dropdown
    $scope.options = [
     {
-      name: 'Choose a location',
-      value: 'Choose a location'
+      name: 'Choose interior designs',
+              value: 'Choose interior designs'
 },
     {
-      name: 'Boston',
-      value: 'Boston'
+        name: 'Industrial',
+              value: 'Industrial'
     },
     {
-      name: 'New York',
-      value: 'New York'
+        name: 'Bohemian',
+              value: 'Bohemian'
     },
     {
-      name: 'Chicago',
-      value: 'Chicago'
+        name: 'Nautical',
+              value: 'Nautical'
     },
     {
-      name: 'San Francisco',
-      value: 'San Francisco'
+        name: 'Scandinavian',
+              value: 'Scandinavian'
     }
   ];
 
   $scope.optionsTo = [
     {
-      name: 'Choose a location',
-      value: 'Choose a location'
+          name:'Choose other interior design',
+              value: 'Choose interior designs'
     },
     {
-      name: 'Boston',
-      value: 'Boston'
+        name: 'Urban Modern',
+              value: 'Urban Modern'
     },
     {
-      name: 'New York',
-      value: 'New York'
+        name: 'Shabby Chic',
+              value: 'Shabby Chic'
     },
     {
-      name: 'Chicago',
-      value: 'Chicago'
+        name: 'CONTEMPORARY',
+              value: 'CONTEMPORARY'
     },
     {
-      name: 'San Francisco',
-      value: 'San Francisco'
+        name: 'MINIMALIST',
+              value: 'MINIMALIST'
     }
   ];
   $scope.selectedOption = $scope.options[0];
